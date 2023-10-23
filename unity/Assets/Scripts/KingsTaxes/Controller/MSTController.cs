@@ -29,7 +29,7 @@
         {
             if (m_graph.Equals(m_goalgraph))
             {
-                m_advanceButton.Enable();
+                // m_advanceButton.Enable();
             }
         }
 

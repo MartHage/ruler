@@ -96,6 +96,15 @@ EditorBuildSettings:
     path: Assets/KingsTaxes/Scenes/TSP/tspstart.unity
     guid: 67268ee53fe7cb140bbec00d33c3976e
   - enabled: 1
+    path: Assets/KingsTaxes/Scenes/TSP/tsplevela.unity
+    guid: d9e6afcbf9b00479794a78f9040d048f
+  - enabled: 1
+    path: Assets/KingsTaxes/Scenes/TSP/tsplevelb.unity
+    guid: 781be59f9495b49dbb152934bdb469ab
+  - enabled: 1
+    path: Assets/KingsTaxes/Scenes/TSP/tsplevelc.unity
+    guid: b16108019af8d48449a1042a08d64974
+  - enabled: 1
     path: Assets/KingsTaxes/Scenes/TSP/tsplevel.unity
     guid: 31fd9c6bd3032bd4f8e1502948ce081d
   - enabled: 1

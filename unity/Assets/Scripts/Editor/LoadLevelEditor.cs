@@ -17,9 +17,9 @@ using General.Model;
 [ScriptedImporter(1, "ipe")]
 public class LoadLevelEditor : ScriptedImporter
 {
-    private readonly float agSIZE = 9f;
-    private readonly float ktSIZE = 6f;
-    private readonly float divSIZE = 5f;
+    private readonly float agSIZE = 11f;
+    private readonly float ktSIZE = 8f;
+    private readonly float divSIZE = 7f;
 
     /// <summary>
     /// Defines a custom method for importing .ipe files into unity.

@@ -13,17 +13,17 @@
         private Text m_text;
 
         // Use this for initialization
-        void Awake()
-        {
-            // find the button and text contained in the game object
-            m_child = transform.Find("Button").gameObject;
-            m_text = m_child.transform.Find("Text").gameObject.GetComponent<Text>();
+        // void Awake()
+        // {
+        //     // find the button and text contained in the game object
+        //     m_child = transform.Find("Button").gameObject;
+        //     m_text = m_child.transform.Find("Text").gameObject.GetComponent<Text>();
 
-            if (m_child == null || m_text == null)
-            {
-                throw new Exception("Could not find child button and corresponding text");
-            }
-        }
+        //     if (m_child == null || m_text == null)
+        //     {
+        //         throw new Exception("Could not find child button and corresponding text");
+        //     }
+        // }
 
         /// <summary>
         /// Enables the contained button

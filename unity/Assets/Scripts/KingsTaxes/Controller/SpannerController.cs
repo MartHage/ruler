@@ -123,11 +123,11 @@
                 // enable or disable buttons
                 if (m_thresholdscorebeat)
                 {
-                    EnableAdvanceButton();
+                    // EnableAdvanceButton();
                 }
                 else
                 {
-                    DisableBothButtons();
+                    // DisableBothButtons();
                 }
             }
             else
@@ -180,7 +180,7 @@
         private void EnableAdvanceButton()
         {
             m_hintButton.Disable();
-            m_advanceButton.Enable();
+            // m_advanceButton.Enable();
         }
 
         /// <summary>
@@ -198,7 +198,7 @@
             {
                 m_hintButton.Disable();
             }
-            m_advanceButton.Disable();
+            // m_advanceButton.Disable();
         }
 
         /// <summary>
@@ -207,7 +207,7 @@
         private void DisableBothButtons()
         {
             m_hintButton.Disable();
-            m_advanceButton.Disable();
+            // m_advanceButton.Disable();
         }
 
         /// <summary>

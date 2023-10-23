@@ -25,9 +25,10 @@
         private List<KingsTaxesLevel> m_levels;
         [SerializeField]
         private string m_victoryScene;
-        [SerializeField]
-        protected ButtonContainer m_advanceButton;
+        // [SerializeField]
+        // protected ButtonContainer m_advanceButton;
 
+        [SerializeField]
         protected int m_levelCounter = 0;
 
         [SerializeField]
@@ -66,50 +67,49 @@
         {
             // clear old level
             Clear();
+            // if (m_levelCounter >= m_levels.Count && m_endlessMode)
+            // {
+            //     var m_endlessDifficulty = PlayerPrefs.GetInt(m_endlessScoreKey);
+            //     Camera.main.orthographicSize = 2 * (1 + m_settlementRadius * Mathf.Sqrt(m_endlessDifficulty));
 
-            if (m_levelCounter >= m_levels.Count && m_endlessMode)
-            {
-                var m_endlessDifficulty = PlayerPrefs.GetInt(m_endlessScoreKey);
-                Camera.main.orthographicSize = 2 * (1 + m_settlementRadius * Mathf.Sqrt(m_endlessDifficulty));
+            //     var height = Camera.main.orthographicSize * 2;
+            //     var width = height * Camera.main.aspect;
+            //     List<Vector2> positions = InitEndlessLevel(m_endlessDifficulty, width, height);
 
-                var height = Camera.main.orthographicSize * 2;
-                var width = height * Camera.main.aspect;
-                List<Vector2> positions = InitEndlessLevel(m_endlessDifficulty, width, height);
+            //     foreach (var position in positions)
+            //     {
+            //         GameObject obj;
+            //         if (UnityEngine.Random.Range(0f, 1f) < .75f)
+            //         {
+            //             obj = Instantiate(m_villagePrefab, position, Quaternion.identity);
+            //         }
+            //         else
+            //         {
+            //             obj = Instantiate(m_castlePrefab, position, Quaternion.identity);
+            //         }
+            //         instantObjects.Add(obj);
+            //     }
 
-                foreach (var position in positions)
-                {
-                    GameObject obj;
-                    if (UnityEngine.Random.Range(0f, 1f) < .75f)
-                    {
-                        obj = Instantiate(m_villagePrefab, position, Quaternion.identity);
-                    }
-                    else
-                    {
-                        obj = Instantiate(m_castlePrefab, position, Quaternion.identity);
-                    }
-                    instantObjects.Add(obj);
-                }
-
-                m_t = 1.5f;
-            }
-            else
-            {
+            //     m_t = 1.5f;
+            // }
+            // else
+            // {
                 // initialize settlements
-                foreach (var village in m_levels[m_levelCounter].Villages)
-                {
-                    var obj = Instantiate(m_villagePrefab, village, Quaternion.identity);
-                    obj.transform.parent = this.transform;
-                    instantObjects.Add(obj);
-                }
-                foreach (var castle in m_levels[m_levelCounter].Castles)
-                {
-                    var obj = Instantiate(m_castlePrefab, castle, Quaternion.identity);
-                    obj.transform.parent = this.transform;
-                    instantObjects.Add(obj);
-                }
-
-                m_t = m_levels[m_levelCounter].TSpannerRatio;
+            foreach (var village in m_levels[m_levelCounter].Villages)
+            {
+                var obj = Instantiate(m_villagePrefab, village, Quaternion.identity);
+                obj.transform.parent = this.transform;
+                instantObjects.Add(obj);
             }
+            foreach (var castle in m_levels[m_levelCounter].Castles)
+            {
+                var obj = Instantiate(m_castlePrefab, castle, Quaternion.identity);
+                obj.transform.parent = this.transform;
+                instantObjects.Add(obj);
+            }
+
+            m_t = m_levels[m_levelCounter].TSpannerRatio;
+            // }
 
             //Make vertex list
             m_settlements = FindObjectsOfType<Settlement>();
@@ -119,7 +119,7 @@
 
             FinishLevelSetup();
 
-            m_advanceButton.Disable();
+            // m_advanceButton.Disable();
         }
 
         /// <summary>
@@ -144,32 +144,32 @@
         /// </summary>
         public void AdvanceLevel()
         {
-            if (m_levelCounter >= m_levels.Count && m_endlessMode)
-            {
-                if (!m_solutionMode)
-                {
-                    // update number of endless levels solved
-                    var m_endlessDifficulty = PlayerPrefs.GetInt(m_endlessScoreKey);
-                    PlayerPrefs.SetInt(m_endlessScoreKey, m_endlessDifficulty + 1);
-                }
-            }
-            else
-            {
-                // increase level index
-                m_levelCounter++;
-            }
+            // if (m_levelCounter >= m_levels.Count && m_endlessMode)
+            // {
+            //     if (!m_solutionMode)
+            //     {
+            //         // update number of endless levels solved
+            //         var m_endlessDifficulty = PlayerPrefs.GetInt(m_endlessScoreKey);
+            //         PlayerPrefs.SetInt(m_endlessScoreKey, m_endlessDifficulty + 1);
+            //     }
+            // }
+            // else
+            // {
+            //     // increase level index
+            //     m_levelCounter++;
+            // }
 
-            if (m_levelCounter >= m_levels.Count && !m_endlessMode)
-            {
-                // all levels beat, load victory
-                PlayerPrefs.SetInt(m_beatKey, 1);
-                SceneManager.LoadScene(m_victoryScene);
-            }
-            else
-            {
-                // initialize new level
-                InitLevel();
-            }
+            // if (m_levelCounter >= m_levels.Count && !m_endlessMode)
+            // {
+            //     // all levels beat, load victory
+            //     PlayerPrefs.SetInt(m_beatKey, 1);
+            //     SceneManager.LoadScene(m_victoryScene);
+            // }
+            // else
+            // {
+            //     // initialize new level
+            //     InitLevel();
+            // }
         }
 
         /// <summary>

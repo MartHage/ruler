@@ -59,11 +59,11 @@
                     m_bestPlayerScore = score;
                 }
 
-                // check if score below theshold
-                if (score < m_thresholdscore)
-                {
-                    m_advanceButton.Enable();
-                }
+                // // check if score below theshold
+                // if (score < m_thresholdscore)
+                // {
+                //     m_advanceButton.Enable();
+                // }
 
                 // update all-time high score
                 if (score < m_highscore)
@@ -84,14 +84,7 @@
         private void UpdateTextField(bool a_tsptour, float a_tourlength)
         {
             string text;
-            if (a_tsptour)
-            {
                 text = "The current tour has length: " + a_tourlength.ToString("0.##");
-            }
-            else
-            {
-                text = "Your best tour so far had length: " + m_bestPlayerScore.ToString("0.##");
-            }
 
             text += "\nChristofides computed length: " + m_thresholdscore.ToString("0.##");
 
